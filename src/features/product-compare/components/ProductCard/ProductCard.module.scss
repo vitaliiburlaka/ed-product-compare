@@ -1,0 +1,66 @@
+@import '../../../../styles/colors.scss';
+
+.Container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+// Wraps the image to prevent stretching in Safari
+.Image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+
+  > img {
+    max-width: 100%;
+    height: auto;
+    padding: 4px;
+  }
+}
+
+.Details {
+  padding-bottom: 24px;
+  border-bottom: 1px solid $gray;
+}
+
+.Name {
+  font-weight: bold;
+  color: $blue;
+  margin-top: auto;
+  margin-bottom: 16px;
+}
+
+.Price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.QtyInfo {
+  color: #ccc;
+  text-transform: lowercase;
+}
+
+.BtnRemove {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 3px;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  background-color: $gray;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+}

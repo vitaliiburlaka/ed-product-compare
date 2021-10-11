@@ -1,0 +1,111 @@
+@import '../../styles/colors.scss';
+
+.Container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.Header {
+  color: $blue;
+}
+
+.ListContainer {
+  text-align: left;
+
+  > div {
+    color: $blue;
+    padding: 8px 16px;
+    margin-bottom: 8px;
+  }
+
+  > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: flex;
+      padding: 8px 16px;
+    }
+  }
+}
+
+.Table {
+  border-collapse: collapse;
+  border-top: 1px solid darken($gray, 5%);
+
+  thead {
+    td {
+      min-height: 1px; // makes the child div use 100% of parent
+      height: 1px; // makes the child div use 100% of parent
+      padding: 8px 16px 32px;
+    }
+  }
+
+  th:first-child,
+  td:first-child {
+    border-right: 1px solid darken($gray, 5%);
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid darken($gray, 5%);
+    }
+
+    td {
+      padding: 8px 16px;
+    }
+  }
+}
+
+.highlightedRow {
+  background-color: $gray;
+}
+
+.Badge {
+  max-width: 100%;
+  height: auto;
+
+  &:not(:last-child) {
+    margin-right: 3px;
+  }
+}
+
+.ErrorMsg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: tomato;
+  font-size: 1.15rem;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.Spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $blue;
+  font-weight: bold;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .Spinner {
+    animation: Spinner-float infinite 2s ease-in-out;
+  }
+}
+
+@keyframes Spinner-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
